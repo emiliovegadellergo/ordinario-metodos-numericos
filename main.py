@@ -1,5 +1,8 @@
 """Aplicación CLI para métodos numéricos del parcial 2."""
 
+from maclaurin import MaclaurinSolver
+import math
+
 
 class MainApplication:
     """Punto de entrada principal de la aplicación de métodos numéricos."""
@@ -43,8 +46,12 @@ class MainApplication:
         print()
 
     def _serie_maclaurin(self) -> None:
-        """Módulo de Serie de Maclaurin (pendiente de implementación)."""
-        print("En construcción\n")
+        """Aproxima sin(pi/3) con la serie de Maclaurin."""
+        print("=== Serie de Maclaurin — sin(π/3) ===")
+        print(f"Valor verdadero: {math.sin(math.pi / 3):.10f}\n")
+        solver = MaclaurinSolver()
+        result = solver.solve(verbose=True)
+        print(f"Resultado final: {result:.10f}\n")
 
     def _newton_raphson(self) -> None:
         """Módulo de Newton-Raphson (pendiente de implementación)."""
